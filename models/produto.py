@@ -1,13 +1,13 @@
 from utils.helper import formata_float_str_moeda
 
 class Produto:
-    contador: int = 1
+    __contador: int = 1
 
     def __init__(self, nome: str, preco: float) -> None:
-        self.__codigo: int = Produto.contador
+        self.__codigo: int = Produto.__contador
         self.__nome: str = nome
         self.__preco: float = preco
-        Produto.contador += 1
+        Produto.__contador += 1
 
     @property
     def codigo(self) -> int:
