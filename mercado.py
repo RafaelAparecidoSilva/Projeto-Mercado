@@ -96,10 +96,10 @@ def comprar_produto() -> None:
             if len(carrinho) > 0:
                 tem_no_carrinho: bool = False
                 for item in carrinho:
-                    quantidade: int = item.get('produto')
+                    quantidade: int = item.get(produto)
                     if quantidade:
                         item[produto] = quantidade + 1
-                        print(f'O produto {produto.nome} agora possui {quantidade+1} unidades no carrinho.')
+                        print(f'O produto {produto.nome} agora possui {quantidade + 1} unidades no carrinho.')
                         tem_no_carrinho = True
                         sleep(2)
                         menu()
@@ -144,7 +144,7 @@ def visualizar_carrinho() -> None:
 
 
 def fechar_pedido() -> None:
-    if (carrinho) > 0:
+    if len(carrinho) > 0:
         valor_total: float = 0
 
         print('Produtos do carrinho')
